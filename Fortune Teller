@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Fortune Teller</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Fortune Teller</h1>
+        <p>Click the button to get your fortune prediction!</p>
+        <button onclick="tellFortune()">Tell My Fortune</button>
+        <h2 id="fortune"></h2>
+        <h3 id="lucky"></h3>
+    </div>
+
+    <script>
+        function tellFortune() {
+            const fortunes = [
+                "You will have a lucky day today!",
+                "A surprise is waiting for you.",
+                "Trust your instincts, they won't fail you.",
+                "A great opportunity is coming your way.",
+                "Something you lost will be found soon."
+            ];
+            
+            const colors = ["Red", "Blue", "Green", "Yellow", "Purple"];
+            const luckyNumber = Math.floor(Math.random() * 100) + 1;
+            
+            document.getElementById("fortune").innerText = fortunes[Math.floor(Math.random() * fortunes.length)];
+            document.getElementById("lucky").innerText = "Lucky Number: " + luckyNumber + " | Lucky Color: " + colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html>
